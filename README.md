@@ -71,6 +71,3 @@ This tool is developed for educational and research purposes. Users are encourag
 
 We welcome contributions to enhance functionality, improve efficiency, and add support for additional e-commerce platforms. Please refer to the contribution guidelines in the repository for more information.
 
-## License
-
-This project is released under the MIT License, making it suitable for both personal and commercial use with proper attribution.
