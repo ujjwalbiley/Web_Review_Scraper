@@ -1,7 +1,7 @@
-flask==2.3.3
-beautifulsoup4==4.12.2
-requests==2.31.0
-flask-cors==4.0.0
-pymongo==4.5.0
-openpyxl==3.1.2
-lxml==4.9.3
+flask
+beautifulsoup4
+requests
+flask-cors
+pymongo
+openpyxl
+lxml
