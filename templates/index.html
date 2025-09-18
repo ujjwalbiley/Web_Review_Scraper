@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="animated fadeInDown">
+            <h1>Product Review Scraper</h1>
+            <p>Extract reviews from Flipkart and Amazon products</p>
+        </header>
+
+        <main>
+            <div class="form-section animated fadeInUp">
+                <h2>Enter Product URL</h2>
+                <form id="scrapeForm">
+                    <div class="input-group">
+                        <select id="websiteSelect">
+                            <option value="flipkart">Flipkart</option>
+                            <option value="amazon">Amazon</option>
+                        </select>
+                        <input type="url" id="productUrl" placeholder="Paste product URL here" required>
+                        <input type="number" id="maxReviews" placeholder="Max reviews" value="10" min="1" max="100">
+                    </div>
+                    <button type="submit" id="scrapeBtn">Scrape Reviews</button>
+                </form>
+            </div>
+
+            <div class="results-section animated fadeInUp" id="resultsSection" style="display: none;">
+                <h2>Scraped Reviews <span id="reviewCount"></span></h2>
+                <div class="actions">
+                    <button id="exportBtn">Export to Excel</button>
+                </div>
+                <div class="reviews-container">
+                    <table id="reviewsTable">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>User</th>
+                                <th>Rating</th>
+                                <th>Title</th>
+                                <th>Comment</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reviewsList">
+                            <!-- Reviews will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="loading animated fadeIn" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Scraping reviews...</p>
+            </div>
+
+            <div class="error animated shake" id="error" style="display: none;">
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
